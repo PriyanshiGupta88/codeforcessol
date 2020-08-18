@@ -1,0 +1,27 @@
+n=int(input())
+def fun(l1,l2,l):
+	a=min(l1)
+	b=min(l2)
+	c=0
+	for i in range(l):
+		if(l1[i]>a and l2[i]>b):
+			g=l1[i]-a
+			h=l2[i]-b
+			v=max(g,h)
+			c+=v
+			
+		if(l1[i]>a and not(l1[i]>a and l2[i]>b)):
+			g=l1[i]-a
+			c+=g
+			
+		if(l2[i]>b and not(l1[i]>a and l2[i]>b)):
+			h=l2[i]-b
+			c+=h
+			
+	return c
+for i in range(n):
+	a=int(input())
+	a1=list(map(int,input().split()))
+	b1=list(map(int,input().split()))
+
+	print(fun(a1,b1,a))
